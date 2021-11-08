@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Usage: ./rsync_push.sh username@host
+# Example: ./rsync_push.sh pi@raspberrypi.local
+# To prevent password prompts, SSH Key based authentication is recommended
+
+rsync -avz --filter=':- .gitignore' ./ $1:smartledmatrix/
+
+ssh $1 ./smartledmatrix/scripts/do_refresh.sh
