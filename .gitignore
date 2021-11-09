@@ -124,3 +124,5 @@ dmypy.json
 .pyre/
 
 firmware/cmake-build-debug/
+
+config.py

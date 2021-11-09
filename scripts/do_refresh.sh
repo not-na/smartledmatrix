@@ -13,11 +13,9 @@ echo "Updating requirements..."
 source venv/bin/activate
 pip install -r requirements.txt
 
-UWSGI_PIDFILE="/tmp/uwsgi.pid"
-
 if [ -f $UWSGI_PIDFILE ]; then
   echo "uWSGI was running, reloading..."
-  uwsgi --reload $UWSGI_PIDFILE || ./scripts/start_server.sh
+  ./scripts/reload_server.sh
 else
   echo "Server wasn't running, starting it"
   ./scripts/start_server.sh

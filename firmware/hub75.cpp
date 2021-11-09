@@ -166,7 +166,7 @@ void hub75_init() {
     // Fill both framebuffers with a default pattern
     for (int x = 0; x < DISPLAY_SIZE; ++x) {
         for (int y = 0; y < DISPLAY_SIZE; ++y) {
-            uint32_t c = (x*8) << 16 | (y*8) << 8 | 16 << 0;
+            uint32_t c = (x*4) << 16 | (y*4) << 8 | 16 << 0;
             hub75_draw_pixel(display_front_buf, x, y, c);
             hub75_draw_pixel(display_back_buf, x, y, c);
         }
